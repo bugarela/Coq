@@ -133,37 +133,37 @@ Proof.
 Qed.
 
 Inductive bin : Type :=
-  | O : bin
-  | T : bin -> bin
-  | S : bin -> bin.
+  | O' : bin
+  | T' : bin -> bin
+  | S' : bin -> bin.
 
 Fixpoint incr (n : bin) : bin :=
   match n with
-    | O => S n
-    | T n => S (T n)
-    | S a => T (S a)
+    | O' => S' n
+    | T' n => S' (T' n)
+    | S' a => T' (S' a)
   end.
 
 Fixpoint bin_to_nat (n : bin) : nat :=
   match n with
-    | O => 0
-    | T n => 2 * (bin_to_nat n)
-    | S a => 1 + (bin_to_nat a)
+    | O'=> 0
+    | T' n => 2 * (bin_to_nat n)
+    | S' a => 1 + (bin_to_nat a)
   end.
 
-Example test_btn1: bin_to_nat (T(S O)) = 2.
+Example test_btn1: bin_to_nat (T'(S' O')) = 2.
 Proof. simpl. reflexivity. Qed.
 
-Example test_btn2: bin_to_nat (S(T(S O))) = 3.
+Example test_btn2: bin_to_nat (S'(T'(S' O'))) = 3.
 Proof. simpl. reflexivity. Qed.
 
-Example test_incr1: incr (T(S O)) = S (T(S O)).
+Example test_incr1: incr (T'(S' O')) = S'(T'(S' O')).
 Proof. simpl. reflexivity. Qed.
 
-Example test_incr2: incr O = S O.
+Example test_incr2: incr O' = S' O'.
 Proof. simpl. reflexivity. Qed.
 
-Example test_incr3: incr (S O) = T (S O).
+Example test_incr3: incr (S' O') = T' (S' O').
 Proof. simpl. reflexivity. Qed.
 
 
