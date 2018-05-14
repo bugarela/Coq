@@ -32,7 +32,7 @@ Proof.
   intros p.
   destruct p as [n m].
   simpl. reflexivity.
-  Qed.
+Qed.
 
 Theorem fst_swap_is_snd : forall (p : natprod),
   fst (swap_pair p) = snd p.
@@ -40,7 +40,7 @@ Proof.
   intros p.
   destruct p as [n m].
   simpl. reflexivity.
-  Qed.
+Qed.
 
 Theorem swap_swap_is_p : forall (p : natprod),
   swap_pair (swap_pair p) = p.

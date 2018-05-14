@@ -1,0 +1,32 @@
+DIGEST 3a0efefe5a1d2b55bdc8e8a780a8465b
+Faula5
+R15:19 aula3 <> <> lib
+R21:25 aula4 <> <> lib
+prf 37:53 <> plus_n_O_firsttry
+R66:68 Coq.Init.Datatypes <> nat ind
+R74:76 Coq.Init.Logic <> :type_scope:x_'='_x not
+R73:73 aula5 <> n var
+R78:80 aula3 <> :nat_scope:x_'+'_x not
+R77:77 aula5 <> n var
+prf 129:146 <> plus_n_O_secondtry
+R159:161 Coq.Init.Datatypes <> nat ind
+R167:169 Coq.Init.Logic <> :type_scope:x_'='_x not
+R166:166 aula5 <> n var
+R171:173 aula3 <> :nat_scope:x_'+'_x not
+R170:170 aula5 <> n var
+prf 298:305 <> plus_n_O
+R318:320 Coq.Init.Datatypes <> nat ind
+R324:326 Coq.Init.Logic <> :type_scope:x_'='_x not
+R323:323 aula5 <> n var
+R328:330 aula3 <> :nat_scope:x_'+'_x not
+R327:327 aula5 <> n var
+prf 483:492 <> minus_diag
+R517:519 Coq.Init.Logic <> :type_scope:x_'='_x not
+R508:512 Coq.Init.Peano <> minus def
+R516:516 aula5 <> n var
+R514:514 aula5 <> n var
+prf 708:715 <> mult_0_r
+R728:730 Coq.Init.Datatypes <> nat ind
+R740:742 Coq.Init.Logic <> :type_scope:x_'='_x not
+R736:738 aula3 <> :nat_scope:x_'*'_x not
+R735:735 aula5 <> n var
