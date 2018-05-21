@@ -72,7 +72,7 @@ Example test_factorial1: (factorial 3) = 6.
 Example test_factorial2: (factorial 5) = (mult 10 12).
 (* FILL IN HERE *) Admitted.
 
-Fixpoint beq_nat (n m : nat) : bool :=
+Fixpoint nat_beq (n m : nat) : bool :=
  match n with
  | O => match m with
         | O => true
@@ -80,7 +80,7 @@ Fixpoint beq_nat (n m : nat) : bool :=
         end
  | S n' => match m with
            | O => false
-           | S m' => beq_nat n' m'
+           | S m' => nat_beq n' m'
            end
  end.
 

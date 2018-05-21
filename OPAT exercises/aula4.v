@@ -35,14 +35,14 @@ Proof.
 Admitted.
 
 Theorem plus_1_neq_0_firsttry : forall n : nat,
-  beq_nat (n + 1) 0 = false.
+  nat_beq (n + 1) 0 = false.
 Proof.
   intros n.
   simpl.  (* does nothing! *)
 Abort.
 
 Theorem plus_1_neq_0 : forall n : nat,
-  beq_nat (n + 1) 0 = false.
+  nat_beq (n + 1) 0 = false.
 Proof.
   intros n. destruct n as [| n'].
   - reflexivity.
