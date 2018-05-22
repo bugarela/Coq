@@ -1,4 +1,5 @@
 Inductive day : Type :=
+
   | monday : day
   | tuesday : day
   | wednesday : day
