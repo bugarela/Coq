@@ -1,4 +1,5 @@
-Require Import doit3 doit5 aula3 aula5 aula6 aula7 aula8.
+Add LoadPath "." as OPAT.
+Require Import OPAT.doit3 OPAT.doit5 OPAT.aula3 OPAT.aula5 OPAT.aula6 OPAT.aula7 OPAT.aula8.
 
 (** **** Exercise: 3 stars (list_exercises)  *)
 (** More practice with lists: *)
@@ -109,10 +110,19 @@ Qed.
 (** **** Exercise: 4 stars, advanced (rev_injective)  *)
 (** Prove that the [rev] function is injective -- that is,
 
-    forall (l1 l2 : natlist), rev l1 = rev l2 -> l1 = l2.
+    forall (l1 l2 : natlist), rev
+ l1 = rev l2 -> l1 = l2.
 
 (There is a hard way and an easy way to do this.) *)
 
-(* FILL IN HERE *)
-(** [] *)
+Theorem rev_injective : forall (l1 l2 : natlist),
+    rev l1 = rev l2 -> l1 = l2.
+Proof.
+  intros l1 l2 p.
+  rewrite <- rev_involutive.
+  rewrite <- p.
+  rewrite rev_involutive.
+  reflexivity.
+Qed.
 
+(** [] *)

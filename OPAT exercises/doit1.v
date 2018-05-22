@@ -1,3 +1,4 @@
+Add LoadPath "." as OPAT.
 (*** Exercício de Programação Funcional**)
 
 (** Defina um programa que compute o antecessor do antecessor de um dado número n **)

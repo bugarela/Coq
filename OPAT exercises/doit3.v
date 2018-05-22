@@ -1,4 +1,5 @@
-Require Import aula3 aula4 aula5.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula4 OPAT.aula5.
 
 (** **** Exercise: 2 stars, each one, recommended (basic_induction)  *)
 (** Prove the following using induction. You might need previously
@@ -58,7 +59,7 @@ Qed.
     induction hypothesis about [n - 2]. The following lemma gives an
     alternative characterization of [evenb (S n)] that works better
     with induction: *)
-Lemma negb_negb : forall a:bool, 
+Lemma negb_negb : forall a:bool,
   negb (negb a) = a.
 Proof.
   intros a.
@@ -72,5 +73,5 @@ Theorem evenb_S : forall n : nat,
 Proof.
   intros n. induction n as [|n' IHn'].
   -simpl. reflexivity.
-  -rewrite -> IHn'. simpl. rewrite negb_negb. reflexivity. 
+  -rewrite -> IHn'. simpl. rewrite negb_negb. reflexivity.
 Qed.

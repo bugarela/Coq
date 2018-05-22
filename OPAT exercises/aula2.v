@@ -1,3 +1,4 @@
+Add LoadPath "." as OPAT.
 Inductive day : Type :=
   | monday : day
   | tuesday : day
@@ -67,14 +68,14 @@ Module NatPlayground.
 
   Inductive nat : Type :=
   | O : nat
-  | S : nat -> nat. 
+  | S : nat -> nat.
 
  Definition pred (n : nat) : nat :=
   match n with
     | O => O
     | S n' => n'
   end.
-  
+
 End NatPlayground.
 
 Check (S (S (S (S O)))).
@@ -83,4 +84,3 @@ Compute (pred 4).
 
 Check S.
 Check pred.
-

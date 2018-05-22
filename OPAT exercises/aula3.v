@@ -1,3 +1,4 @@
+Add LoadPath "." as OPAT.
 Fixpoint evenb (n:nat) : bool :=
   match n with
   | O => true
@@ -38,7 +39,7 @@ Fixpoint mult (n m : nat) : nat :=
     | O => O
     | S n' => plus m (mult n' m)
   end.
-  
+
 Example test_mult1: (mult 3 3) = 9.
 Proof. simpl. reflexivity. Qed.
 
@@ -48,7 +49,7 @@ Fixpoint minus (n m:nat) : nat :=
   | S _ , O => n
   | S n', S m' => minus n' m'
   end.
-  
+
 End NatPlayground2.
 
 
@@ -93,7 +94,7 @@ Fixpoint leb_nat (n m : nat) : bool :=
       | S m' => leb_nat n' m'
       end
   end.
-  
+
 Example test_leb1: (leb_nat 2 2) = true.
 Proof. simpl. reflexivity. Qed.
 Example test_leb2: (leb_nat 2 4) = true.

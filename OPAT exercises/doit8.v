@@ -1,4 +1,5 @@
-Require Import aula3 aula8 aula9 aula10.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula8 OPAT.aula9 OPAT.aula10.
 
 (** **** Exercise: 2 stars (filter_even_gt7)  *)
 (** Use [filter] (instead of [Fixpoint]) to write a Coq function

@@ -1,3 +1,4 @@
+Add LoadPath "." as OPAT.
 Inductive day : Type :=
 
   | monday : day

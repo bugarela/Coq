@@ -1,4 +1,6 @@
-Require Import aula3 aula4.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula4.
+
 (** Prove the following claim, marking cases (and subcases) with
     bullets when you use [destruct]. *)
 
@@ -9,7 +11,7 @@ Proof.
   intros b c H.
   destruct c.
   - reflexivity.
-  - rewrite <- H. destruct b. 
+  - rewrite <- H. destruct b.
     + reflexivity.
     + reflexivity.
 Qed.

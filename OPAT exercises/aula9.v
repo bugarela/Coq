@@ -1,3 +1,4 @@
+Add LoadPath "." as OPAT.
 Inductive boollist : Type :=
   | bool_nil : boollist
   | bool_cons : bool -> boollist -> boollist.
@@ -49,7 +50,7 @@ Inductive list' {X:Type} : Type :=
   | nil' : list'
   | cons' : X -> list' -> list'.
 
-Fixpoint repeat''' {X : Type} (x:X) 
+Fixpoint repeat''' {X : Type} (x:X)
                       (count:nat) : list X :=
   match count with
   | 0        => nil

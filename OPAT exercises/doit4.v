@@ -1,4 +1,5 @@
-Require Import aula3 aula4 aula5 aula6.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula4 OPAT.aula5 OPAT.aula6.
 
 (** **** Exercise: 2 star (snd_fst_is_swap)  *)
 Theorem snd_fst_is_swap : forall (p : natprod),
@@ -7,7 +8,7 @@ Proof.
   intros p.
   destruct p as [n m].
   simpl. reflexivity.
-Qed.  
+Qed.
 
 (** **** Exercise: 2 star, optional (fst_swap_is_snd)  *)
 Theorem fst_swap_is_snd : forall (p : natprod),
@@ -17,4 +18,3 @@ Proof.
   destruct p as [n m].
   simpl. reflexivity.
 Qed.
-

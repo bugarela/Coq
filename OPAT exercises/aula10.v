@@ -1,4 +1,5 @@
-Require Import aula3 aula9.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula9.
 
 Definition doit3times {X:Type} (f:X->X) (n:X) : X :=
   f (f (f n)).
@@ -35,7 +36,7 @@ Fixpoint fold {X Y:Type} (f: X->Y->Y) (l:list X) (b:Y)
   | nil => b
   | h :: t => f h (fold f t b)
   end.
-  
+
 Example fold_example1 :
   fold mult [1;2;3;4] 1 = 24.
 Proof. reflexivity. Qed.

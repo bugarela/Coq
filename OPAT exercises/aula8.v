@@ -1,4 +1,5 @@
-Require Import doit3 aula5 aula6 aula7.
+Add LoadPath "." as OPAT.
+Require Import OPAT.doit3 OPAT.aula5 OPAT.aula6 OPAT.aula7.
 
 Theorem nil_app : forall l:natlist,
   [] ++ l = l.
@@ -76,4 +77,3 @@ Proof.
 Qed.
 
 Search rev.
-

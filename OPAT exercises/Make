@@ -1,4 +1,4 @@
--R . ThatSuperProof
+-R . OPAT
 
 aula1.v
 aula2.v
@@ -16,3 +16,6 @@ doit2.v
 doit3.v
 doit4.v
 doit5.v
+doit6.v
+doit7.v
+doit8.v

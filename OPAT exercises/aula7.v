@@ -1,4 +1,5 @@
-Require Export aula3 aula4 aula5 aula6.
+Add LoadPath "." as OPAT.
+Require Export OPAT.aula3 OPAT.aula4 OPAT.aula5 OPAT.aula6.
 
 Inductive natlist : Type :=
   | nil  : natlist

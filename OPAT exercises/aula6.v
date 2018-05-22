@@ -1,3 +1,4 @@
+Add LoadPath "." as OPAT.
 Inductive natprod : Type :=
 | pair : nat -> nat -> natprod.
 
@@ -38,5 +39,3 @@ Theorem surjective_pairing : forall (p : natprod),
   p = (fst p, snd p).
 Proof.
   intros p.  destruct p as [n m].  simpl.  reflexivity.  Qed.
-
-

@@ -1,4 +1,5 @@
-Require Import aula3 aula4 aula5 aula6 aula7.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula4 OPAT.aula5 OPAT.aula6 OPAT.aula7.
 
 (** Complete the definitions of [nonzeros], [oddmembers] and
     [countoddmembers] below. Have a look at the tests to understand
@@ -16,7 +17,7 @@ Fixpoint nonzeros (l:natlist) : natlist :=
 Example test_nonzeros:
   nonzeros [0;1;0;2;3;0;0] = [1;2;3].
 Proof. simpl. reflexivity. Qed.
-  
+
 (* GRADE_THEOREM 0.5: NatList.test_nonzeros *)
 
 (** **** Exercise: 2 star  *)
@@ -94,4 +95,3 @@ Example test_alternate4:
   alternate [] [20;30] = [20;30].
 Proof. reflexivity. Qed.
 (** [] *)
-

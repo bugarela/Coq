@@ -39,8 +39,8 @@ $(call includecmdwithout@,$(COQBIN)coqtop -config)
 #                        #
 ##########################
 
-COQLIBS?= -R . ThatSuperProof
-COQDOCLIBS?=-R . ThatSuperProof
+COQLIBS?= -R . OPAT
+COQDOCLIBS?=-R . OPAT
 
 ##########################
 #                        #
@@ -80,7 +80,10 @@ endif
 #                    #
 ######################
 
-VFILES:=doit5.v\
+VFILES:=doit8.v\
+  doit7.v\
+  doit6.v\
+  doit5.v\
   doit4.v\
   doit3.v\
   doit2.v\
@@ -170,14 +173,14 @@ userinstall:
 
 install:
 	for i in $(VOFILES); do \
-	 install -d `dirname $(DSTROOT)$(COQLIBINSTALL)/ThatSuperProof/$$i`; \
-	 install -m 0644 $$i $(DSTROOT)$(COQLIBINSTALL)/ThatSuperProof/$$i; \
+	 install -d `dirname $(DSTROOT)$(COQLIBINSTALL)/OPAT/$$i`; \
+	 install -m 0644 $$i $(DSTROOT)$(COQLIBINSTALL)/OPAT/$$i; \
 	done
 
 install-doc:
-	install -d $(DSTROOT)$(COQDOCINSTALL)/ThatSuperProof/html
+	install -d $(DSTROOT)$(COQDOCINSTALL)/OPAT/html
 	for i in html/*; do \
-	 install -m 0644 $$i $(DSTROOT)$(COQDOCINSTALL)/ThatSuperProof/$$i;\
+	 install -m 0644 $$i $(DSTROOT)$(COQDOCINSTALL)/OPAT/$$i;\
 	done
 
 clean:

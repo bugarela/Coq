@@ -1,10 +1,11 @@
-Require Import aula3 aula4.
+Add LoadPath "." as OPAT.
+Require Import OPAT.aula3 OPAT.aula4.
 
 Theorem plus_n_O_firsttry : forall n:nat,
   n = n + 0.
 Proof.
   intros n.
-  simpl. 
+  simpl.
 Abort.
 
 Theorem plus_n_O_secondtry : forall n:nat,
@@ -12,7 +13,7 @@ Theorem plus_n_O_secondtry : forall n:nat,
 Proof.
   intros n. destruct n as [| n'].
   - (* n = 0 *)
-    reflexivity. 
+    reflexivity.
   - (* n = S n' *)
     simpl.
 Abort.
