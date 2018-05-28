@@ -80,7 +80,9 @@ endif
 #                    #
 ######################
 
-VFILES:=doit8.v\
+VFILES:=doit10.v\
+  doit9.v\
+  doit8.v\
   doit7.v\
   doit6.v\
   doit5.v\
@@ -88,6 +90,7 @@ VFILES:=doit8.v\
   doit3.v\
   doit2.v\
   doit1.v\
+  aula11.v\
   aula10.v\
   aula9.v\
   aula8.v\

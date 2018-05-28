@@ -18,7 +18,7 @@ Qed.
 
 (** **** Exercise: 1 star (zero_nbeq_plus_1)  *)
 Theorem zero_nbeq_plus_1 : forall n : nat,
-  nat_beq 0 (n + 1) = false.
+  beq_nat 0 (n + 1) = false.
 Proof.
   intros [|n'].
   - reflexivity.

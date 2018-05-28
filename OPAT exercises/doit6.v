@@ -19,7 +19,7 @@ Proof.
   - simpl. rewrite app_nil_r. reflexivity.
   - simpl. rewrite IHl1'. rewrite app_assoc. reflexivity.
 Qed.
-  
+
 
 Theorem rev_involutive : forall l : natlist,
   rev (rev l) = l.
@@ -61,7 +61,7 @@ Qed.
 Notation "x && y" := (andb x y).
 Notation "x || y" := (orb x y).
 
-Check nat_beq.
+Check beq_nat.
 
 Fixpoint beq_natlist (l1 l2 : natlist) : bool :=
   match l1 with
@@ -71,7 +71,7 @@ Fixpoint beq_natlist (l1 l2 : natlist) : bool :=
            end
   | n1 :: t1 => match l2 with
                 | nil => false
-                | n2 :: t2 => nat_beq n1 n2 && beq_natlist t1 t2
+                | n2 :: t2 => beq_nat n1 n2 && beq_natlist t1 t2
                 end
   end.
 
@@ -88,23 +88,23 @@ Example test_beq_natlist3 :
   beq_natlist [1;2;3] [1;2;4] = false.
 reflexivity. Qed.
 
-Lemma nat_beq_refl : forall n:nat,
-  true = nat_beq n n.
+Lemma beq_nat_refl : forall n:nat,
+  true = beq_nat n n.
 Proof.
    intros n. induction n.
    - reflexivity.
    - simpl. rewrite IHn. reflexivity.
-Qed. 
+Qed.
 
 Theorem beq_natlist_refl : forall l:natlist,
   true = beq_natlist l l.
 Proof.
   intros l. induction l as [ | n l1' IHl1'].
-  - reflexivity. 
-  - simpl. rewrite <- nat_beq_refl. rewrite <- IHl1'. reflexivity.
+  - reflexivity.
+  - simpl. rewrite <- beq_nat_refl. rewrite <- IHl1'. reflexivity.
 Qed.
 
-  
+
 (** [] *)
 
 (** **** Exercise: 4 stars, advanced (rev_injective)  *)
