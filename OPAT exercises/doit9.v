@@ -23,7 +23,7 @@ Qed.
     [rewrite].  What are the situations where both can usefully be
     applied?
 
-(* FILL IN HERE *)
+(* O apply serve para aplicar hipóteses quantificadas, que vem de premissas em implicações. Em uma umplicação sem quantificação, as duas poderiam ser usadas obtendo o mesmo resultado. *)
 *)
 (** [] *)
 
@@ -33,7 +33,8 @@ Example trans_eq_exercise : forall (n m o p : nat),
      (n + p) = m ->
      (n + p) = (minustwo o).
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros n m o p eq1 eq2. rewrite eq2. rewrite eq1. reflexivity.
+Qed.
 (** [] *)
 
 (** **** Exercise: 1 star (inversion_ex3)  *)
@@ -42,7 +43,12 @@ Example inversion_ex3 : forall (X : Type) (x y z : X) (l j : list X),
   y :: l = x :: j ->
   x = y.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros X x y z l j eq1 eq2.
+  inversion eq1.
+  inversion eq2.
+  rewrite <- H0.
+  reflexivity.
+Qed.
 (** [] *)
 
 (** **** Exercise: 1 star (inversion_ex6)  *)
@@ -52,18 +58,30 @@ Example inversion_ex6 : forall (X : Type)
   y :: l = z :: j ->
   x = z.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros X x y z l j eq1 eq2.
+  inversion eq1.
+Qed.
 (** [] *)
 
 (** Dois teoremas que foram esquecidos de estar no doit3 (3 Star)!!! *)
 
-Theorem mult_assoc : forall n m p : nat,
-  n * (m * p) = (n * m) * p.
-Proof.
-  (* FILL IN HERE *) Admitted.
-(** [] *)
-
 Theorem mult_plus_distr_r : forall n m p : nat,
   (n + m) * p = (n * p) + (m * p).
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros n m p.
+  induction n.
+  -reflexivity.
+  -simpl. rewrite IHn.  rewrite plus_assoc. reflexivity.
+Qed.
+(** [] *)
+
+Theorem mult_assoc : forall n m p : nat,
+  n * (m * p) = (n * m) * p.
+Proof.
+  intros n m p.
+  induction n.
+  -reflexivity.
+  -simpl. rewrite IHn. rewrite mult_plus_distr_r. reflexivity.
+Qed.
+   
+
