@@ -1,5 +1,5 @@
 Add LoadPath "." as OPAT.
-Require Import OPAT.doit3 OPAT.aula3 OPAT.aula9 OPAT.aula10 OPAT.aula11.
+Require Import OPAT.doit3 OPAT.aula3 OPAT.aula9 OPAT.aula10 OPAT.aula11 OPAT.aula4.
 (** adicione outros arquivos que você achar necessário, porém cuidado para não gerar conflito de nomes *)
 
 (** **** Exercise: 3 stars, recommended (plus_n_n_injective)  *)
@@ -11,14 +11,28 @@ Theorem plus_n_n_injective : forall n m,
      n = m.
 Proof.
   intros n. induction n as [| n'].
-  (* FILL IN HERE *) Admitted.
+  - intros m eq. induction m.
+    +reflexivity.
+    +inversion eq.
+  - intros m eq. destruct m.
+    +inversion eq.
+    +inversion eq. rewrite <- plus_n_Sm in H0. rewrite <- plus_n_Sm in H0. inversion H0.
+     apply IHn' in H1. rewrite H1. reflexivity.
+Qed.
 (** [] *)
 
 (** **** Exercise: 2 stars (beq_nat_true)  *)
 Theorem beq_nat_true : forall n m,
     beq_nat n m = true -> n = m.
 Proof.
-  (* FILL IN HERE *) Admitted.
+  intros n. induction n.
+  -intros m eq. induction m.
+   +reflexivity.
+   +inversion eq.
+  -intros m eq. induction m.
+   +inversion eq.
+   +inversion eq. apply IHn in H0. rewrite H0. reflexivity.
+Qed.
 (** [] *)
 
 
@@ -43,8 +57,15 @@ Theorem combine_split : forall X Y (l : list (X * Y)) l1 l2,
   split l = (l1, l2) ->
   combine l1 l2 = l.
 Proof.
-  (* FILL IN HERE *) Admitted.
-(** [] *)
+  intros X Y l. induction l.
+  -intros l1 l2 eq. simpl in eq. inversion eq. simpl. reflexivity.
+  -simpl. destruct x. destruct (split l). intros l2 l3 eq. induction l2.
+   +inversion eq.
+   +induction l3.
+    *inversion eq.
+    *inversion eq. rewrite <- H0. rewrite <- H1. rewrite <- H2. rewrite <- H3.
+     apply IHl2 in eq.
+             (** [] *)
 
 (** **** Exercise: 2 stars (destruct_eqn_practice)  *)
 Theorem bool_fn_applied_thrice :
